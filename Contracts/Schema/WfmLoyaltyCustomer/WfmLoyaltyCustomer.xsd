@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			 xmlns="http://retalix.com/R10/services"
+			 targetNamespace="http://retalix.com/R10/services"
+			 elementFormDefault="qualified"
+			 attributeFormDefault="unqualified">
+  <xs:include schemaLocation="..\..\..\..\Libs\Retalix\Contracts\Schemas\Common\ActionTypeCodes.xsd"/>
+  <xs:element name="WfmLoyaltyCustomer" type="WfmLoyaltyCustomerType"/>
+  <xs:complexType name="WfmLoyaltyCustomerType">
+    <xs:sequence>
+      <xs:element name="Id" type="xs:int" minOccurs="1"/>
+      <xs:element name="Store" type="xs:string" minOccurs="0"/>
+      <xs:element name="Customer" type="xs:string" minOccurs="0"/>
+      <xs:element name="Mobile" type="xs:string" minOccurs="0"/>
+      <xs:element name="Address" type="xs:string" minOccurs="0"/>
+      <xs:element name="LoyaltyCode" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="Action" type="ActionTypeCodes"/>
+  </xs:complexType>
+</xs:schema>
