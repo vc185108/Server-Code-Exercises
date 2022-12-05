@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0E57A40F-290D-4448-B6BC-1FC6441B1092}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Retalix.WholeFoods.WfmLoyaltyCustomer</RootNamespace>
+    <AssemblyName>Retalix.WholeFoods.WfmLoyaltyCustomer</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\..\Libs\Retalix\StoreServer\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging, Version=2.1.2.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\Retalix\StoreServer\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\..\Libs\Retalix\StoreServer\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>..\..\Libs\Retalix\StoreServer\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="Retalix.Contract.Schemas, Version=22.200.999.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\Retalix\StoreServer\Retalix.Contract.Schemas.dll</HintPath>
+    </Reference>
+    <Reference Include="Retalix.Contracts">
+      <HintPath>..\..\Libs\Retalix\Contracts\Retalix.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="Retalix.DPOS.SystemIntegrity">
+      <HintPath>..\..\Libs\Retalix\StoreServer\Retalix.DPOS.SystemIntegrity.dll</HintPath>
+    </Reference>
+    <Reference Include="Retalix.StoreServices.Infrastructure">
+      <HintPath>..\..\Libs\Retalix\StoreServer\Retalix.StoreServices.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Retalix.StoreServices.Model">
+      <HintPath>..\..\Libs\Retalix\StoreServer\Retalix.StoreServices.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="Retalix.StoreServices.Model.Private">
+      <HintPath>..\..\Libs\Retalix\StoreServer\Retalix.StoreServices.Model.Private.dll</HintPath>
+    </Reference>
+    <Reference Include="Retalix.WholeFoods.Common, Version=30.100.999.107, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Output\Debug\Product\Retalix.WholeFoods.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Retalix.WholeFoods.Common.Services">
+      <HintPath>..\..\Output\Debug\Product\Retalix.WholeFoods.Common.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Retalix.WholeFoods.Contracts, Version=30.100.999.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\Retalix\Contracts\Retalix.WholeFoods.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessComponents\WfmLoyaltyCustomers.cs" />
+    <Compile Include="BusinessComponents\WfmLoyaltyCustomerLookup.cs" />
+    <Compile Include="BusinessComponents\WfmLoyaltyCustomerMaintenance.cs" />
+    <Compile Include="BusinessServices\WfmLoyaltyCustomerLookupService.cs" />
+    <Compile Include="BusinessServices\WfmLoyaltyCustomerMaintenanceService.cs" />
+    <Compile Include="DAL\DTO\WfmLoyaltyCustomerDto.cs" />
+    <Compile Include="DAL\WfmLoyaltyCustomerDAO.cs" />
+    <Compile Include="DAL\WfmLoyaltyCustomerFactory.cs" />
+    <Compile Include="DMS\WfmLoyaltyCustomerDtoDms.cs" />
+    <Compile Include="DMS\WfmLoyaltyCustomerDtoMapper.cs" />
+    <Compile Include="DMS\WfmLoyaltyCustomerServiceResolver.cs" />
+    <Compile Include="Exception\WfmLoyaltyCustomerDataNotFoundException.cs" />
+    <Compile Include="Exception\WfmLoyaltyCustomerExistsException.cs" />
+    <Compile Include="Model\IWfmLoyaltyCustomer.cs" />
+    <Compile Include="Model\IWfmLoyaltyCustomerDAO.cs" />
+    <Compile Include="Model\IWfmLoyaltyCustomerFactory.cs" />
+    <Compile Include="Model\IWfmLoyaltyCustomerLookup.cs" />
+    <Compile Include="Model\IWfmLoyaltyCustomerMaintenance.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TLog\WfmLoyaltyCustomerTLogVisitor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ConfigAdditions\WfmLoyaltyCustomerCastleConfig.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <EmbeddedResource Include="DAL\Hbm\WfmLoyaltyCustomer.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<castle>
+  <components>
+    <component id="WfmLoyaltyCustomer"
+							service="Retalix.StoreServices.Connectivity.Manager.Config.IDataAccessParticipants, Retalix.StoreServices.Connectivity.Manager"
+							type="Retalix.StoreServices.Connectivity.Manager.Config.DataAccessParticipantsByXml, Retalix.StoreServices.Connectivity.Manager">
+      <parameters>
+        <participantsXml>
+          <DataAccessAssemblies>
+            <DataAccessAssembly AssemblyName="Retalix.WholeFoods.WfmLoyaltyCustomer"/>
+          </DataAccessAssemblies>
+        </participantsXml>
+      </parameters>
+    </component>
+    <!--Services-->
+    <component id="WfmLoyaltyCustomerMaintenanceService"
+			service="Retalix.StoreServices.Model.Infrastructure.Service.IBusinessService,  Retalix.StoreServices.Model"
+			type="Retalix.WholeFoods.WfmLoyaltyCustomer.BusinessServices.WfmLoyaltyCustomerMaintenanceService, Retalix.WholeFoods.WfmLoyaltyCustomer"/>
+
+    <component id="WfmLoyaltyCustomerLookupService"
+  		    service="Retalix.StoreServices.Model.Infrastructure.Service.IBusinessService,  Retalix.StoreServices.Model"
+	  	    type="Retalix.WholeFoods.WfmLoyaltyCustomer.BusinessServices.WfmLoyaltyCustomerLookupService, Retalix.WholeFoods.WfmLoyaltyCustomer"/>
+
+    <!-- Dao -->
+    <component id="WfmLoyaltyCustomerDAO"
+					service="Retalix.WholeFoods.WfmLoyaltyCustomer.Model.IWfmLoyaltyCustomerDAO,Retalix.WholeFoods.WfmLoyaltyCustomer"
+					type="Retalix.WholeFoods.WfmLoyaltyCustomer.DAL.WfmLoyaltyCustomerDAO,Retalix.WholeFoods.WfmLoyaltyCustomer"/>
+
+    <!-- BC -->
+    <component id="WfmLoyaltyCustomerLookup"
+					service="Retalix.WholeFoods.WfmLoyaltyCustomer.Model.IWfmLoyaltyCustomerLookup, Retalix.WholeFoods.WfmLoyaltyCustomer"
+					type="Retalix.WholeFoods.WfmLoyaltyCustomer.BusinessComponents.WfmLoyaltyCustomerLookup, Retalix.WholeFoods.WfmLoyaltyCustomer"/>
+
+    <component id="WfmLoyaltyCustomerMaintenance"
+					service="Retalix.WholeFoods.WfmLoyaltyCustomer.Model.IWfmLoyaltyCustomerMaintenance, Retalix.WholeFoods.WfmLoyaltyCustomer"
+					type="Retalix.WholeFoods.WfmLoyaltyCustomer.BusinessComponents.WfmLoyaltyCustomerMaintenance, Retalix.WholeFoods.WfmLoyaltyCustomer"/>
+
+    <component id="WfmLoyaltyCustomerFactory"
+         service="Retalix.WholeFoods.WfmLoyaltyCustomer.Model.IWfmLoyaltyCustomerFactory,Retalix.WholeFoods.WfmLoyaltyCustomer"
+         type="Retalix.WholeFoods.WfmLoyaltyCustomer.DAL.WfmLoyaltyCustomerFactory,Retalix.WholeFoods.WfmLoyaltyCustomer"/>
+
+    <!--Visitors-->
+    <component id="WfmLoyaltyCustomerTLogVisitor"
+			         service="Retalix.StoreServices.Model.Selling.RetailTransaction.RetailTransactionLog.IRetailTransactionLogDocumentCreationVisitor, Retalix.StoreServices.Model"
+               type="Retalix.WholeFoods.WfmLoyaltyCustomer.TLog.WfmLoyaltyCustomerTLogVisitor, Retalix.WholeFoods.WfmLoyaltyCustomer"/>
+  </components>
+</castle>

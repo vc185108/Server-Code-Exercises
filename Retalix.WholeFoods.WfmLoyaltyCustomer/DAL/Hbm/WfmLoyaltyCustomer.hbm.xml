@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   namespace="Retalix.WholeFoods.WfmLoyaltyCustomer.BusinessComponents"
+                   assembly="Retalix.WholeFoods.WfmLoyaltyCustomer">
+
+  <class name="WfmLoyaltyCustomers" table="WfmLoyaltyCustomers" lazy="false">
+    <id name="Id" column="Id" type="int"/>
+    <property name="Store" type="string"/>
+    <property name="Customer" type="string"/>
+    <property name="Mobile" type="string"/>
+    <property name="Address" type="string"/>
+    <property name="LoyaltyCode" type="string"/>
+  </class>
+  <query name="WfmLoyaltyCustomerAll">
+    from WfmLoyaltyCustomers lc
+  </query>
+  <query name="WfmLoyaltyCustomerById">
+    from WfmLoyaltyCustomers lc
+    where
+    (lc.Id = :Id)
+  </query>
+  <query name="LoyaltyCustomerLookupByCriteria">
+    from WfmLoyaltyCustomers  lc
+    where
+    (:store is null OR lc.Store like Concat ('%',:store ,'%')) and
+    (:customer is null OR lc.Customer like Concat ('%',:customer ,'%')) and
+    (:loyaltyCode is null  OR lc.LoyaltyCode like Concat ('%',:loyaltyCode ,'%'))
+  </query>
+</hibernate-mapping>
