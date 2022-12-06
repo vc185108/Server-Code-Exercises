@@ -21,6 +21,8 @@ namespace Retalix.Wholefoods.Contracts.Generated.WfmLoyaltyCustomer
         
         private string loyaltyCodeField;
         
+        private string mobileField;
+        
         private bool IdFieldSpecified;
         
         public int Id
@@ -69,6 +71,18 @@ namespace Retalix.Wholefoods.Contracts.Generated.WfmLoyaltyCustomer
             set
             {
                 this.loyaltyCodeField = value;
+            }
+        }
+        
+        public string Mobile
+        {
+            get
+            {
+                return this.mobileField;
+            }
+            set
+            {
+                this.mobileField = value;
             }
         }
         
