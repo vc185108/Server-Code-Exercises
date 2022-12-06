@@ -24,6 +24,7 @@
     where
     (:store is null OR lc.Store like Concat ('%',:store ,'%')) and
     (:customer is null OR lc.Customer like Concat ('%',:customer ,'%')) and
-    (:loyaltyCode is null  OR lc.LoyaltyCode like Concat ('%',:loyaltyCode ,'%'))
+    (:loyaltyCode is null  OR lc.LoyaltyCode like Concat ('%',:loyaltyCode ,'%')) and
+    (:mobile is null  OR lc.Mobile like Concat ('%',:mobile ,'%'))
   </query>
 </hibernate-mapping>

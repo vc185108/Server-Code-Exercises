@@ -45,8 +45,6 @@ namespace Retalix.WholeFoods.WfmLoyaltyCustomer.DAL
         {
             List<IWfmLoyaltyCustomer> loyaltyCustomers = _sessionProvider.Session.Query<IWfmLoyaltyCustomer>().ToList(); 
             return loyaltyCustomers;
-            //var query = _sessionProvider.Session.GetNamedQuery("WfmLoyaltyCustomerAll");
-            //return query.List<IWfmLoyaltyCustomer>();
         }
         public IWfmLoyaltyCustomer GetLoyaltyCustomerById(int id)
         {
@@ -83,6 +81,7 @@ namespace Retalix.WholeFoods.WfmLoyaltyCustomer.DAL
             query.SetParameter("store", searchCriteriaType.Store);
             query.SetParameter("customer", searchCriteriaType.Customer);
             query.SetParameter("loyaltyCode", searchCriteriaType.LoyaltyCode);
+            query.SetParameter("mobile", searchCriteriaType.Mobile);
             var loyalityCustomerList= query.List<IWfmLoyaltyCustomer>();
             if (loyalityCustomerList.Any())
             {
