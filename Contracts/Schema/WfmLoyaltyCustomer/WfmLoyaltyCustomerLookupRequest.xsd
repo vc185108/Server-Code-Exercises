@@ -22,6 +22,7 @@
       <xs:element name="Store" type="xs:string"/>
       <xs:element name="Customer" type="xs:string"/>
       <xs:element name="LoyaltyCode" type="xs:string"/>
+      <xs:element name="Mobile" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>
 </xs:schema>
